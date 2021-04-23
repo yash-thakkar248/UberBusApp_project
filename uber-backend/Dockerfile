@@ -1,7 +1,7 @@
 FROM python:3.8-slim
 COPY . /app
 WORKDIR /app
-RUN pip install -r requirements.txt && \
+RUN pip install -r uber-backend/requirements.txt && \
 pip uninstall bson -y && \
 pip uninstall pymongo -y && \
 pip3 install bson && \
