@@ -4,11 +4,10 @@ jobs:
     docker:
       - image: circleci/python:3.8.3
     steps:
-      - setup_remote_docker:
-        version: 19.03.13
-    steps:
       - checkout
       - run:
+      - setup_remote_docker:
+        version: 19.03.13
           name: Zip files
           command: |
             curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
