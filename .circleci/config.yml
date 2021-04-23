@@ -4,12 +4,7 @@ jobs:
     docker:
       - image: circleci/python:3.8.3
     steps:
-      - run:
-          name: Show files
-          command: |
-            ls -al  
-      - setup_remote_docker:
-          version: 19.03.13
+      - checkout
       - run:
           name: Zip files
           command: |
@@ -19,11 +14,3 @@ jobs:
             sudo apt-get update -y
             sudo apt-get install -y less
             ls -al
-      - run:
-          name : Docker Operations
-          command: |
-            echo "LOG IN COMPLETED" | docker login -u=$DockerUsername -p=$DockerPassword
-            ls -al
-            docker build -f uber-backend/Dockerfile -t $DockerUsername/uberbusapp:backend .
-            sleep 120
-            docker push $DockerUsername/uberbusapp:backend
