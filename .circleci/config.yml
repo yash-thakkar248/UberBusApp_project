@@ -18,8 +18,7 @@ jobs:
       - run:
           name : Docker Operations
           command: |
-            docker login -u=$DockerUsername -p=$DockerPassword
-            cd uber-backend
-            docker build -f Dockerfile -t $DockerUsername/uberbusapp:backend .
+            echo "LOG IN COMPLETED" | docker login -u=$DockerUsername -p=$DockerPassword
+            docker build -f uber-backend/Dockerfile -t $DockerUsername/uberbusapp:backend .
             sleep 120
             docker push $DockerUsername/uberbusapp:backend
