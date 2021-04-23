@@ -17,8 +17,6 @@ jobs:
       - run:
           name : Docker Operations
           command: |
-            sudo docker login -u=$DockerUsername -p=$DockerPassword
             cd uber-backend
-            sudo docker build -f Dockerfile -t $DockerUsername/uberbusapp:backend .
+            docker build -f Dockerfile -t $DockerUsername/uberbusapp:backend .
             sleep 120
-            sudo docker push $DockerUsername/uberbusapp:backend
