@@ -15,6 +15,6 @@ jobs:
             sudo apt-get install -y less
             ls -al
             cd uber-backend
-            docker login -u=$DockerUsername -p=$DockerPassword
-            docker build -f Dockerfile -t $DockerUsername/uberbusapp:backend .
-            docker push $DockerUsername/uberbusapp:backend
+            sudo docker login -u=$DockerUsername -p=$DockerPassword
+            sudo docker build -f Dockerfile -t $DockerUsername/uberbusapp:backend .
+            sudo docker push $DockerUsername/uberbusapp:backend
