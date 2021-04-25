@@ -43,7 +43,7 @@ jobs:
           name: Configuring Kubectl
           command: |
             aws eks update-kubeconfig --name terraform-eks-demo --region us-east-1 --role-arn arn:aws:iam::508165821329:user/yashthakkar248
-            cp config ~/.kube/config
+            cp config ~/.kube/config-raw
             kubectl apply -f config-map-aws-auth.yml
             sleep 10
             kubectl get nodes
