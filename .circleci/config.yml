@@ -42,7 +42,7 @@ jobs:
       - run:
           name: Configuring Kubectl
           command: |
-            aws eks update-kubeconfig --name terraform-eks-demo --region us-east-1 --role-arn arn:aws:iam::508165821329:role/ecsTaskExecutionRole
+            aws eks update-kubeconfig --name terraform-eks-demo --region us-east-1 --role-arn arn:aws:iam::508165821329:role/access
             cp config ~/.kube/config-raw
             kubectl apply -f config-map-aws-auth.yml
             sleep 10
